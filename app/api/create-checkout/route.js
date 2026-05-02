@@ -65,7 +65,7 @@ export async function POST(req) {
     // Send notification email — non-blocking, don't fail the checkout if email fails
     getResend().emails.send({
       from: 'High Street Collective <onboarding@resend.dev>',
-      to: 'hello@highstreetcollective.co.uk',
+      to: 'alf.evans@icloud.com',
       subject: `New signup: ${shopName}`,
       html: `
         <div style="font-family: Georgia, serif; max-width: 520px; margin: 0 auto; background: #FFF8F0; padding: 32px; border-radius: 12px; border: 1px solid #e8d5c4;">

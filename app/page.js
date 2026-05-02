@@ -11,7 +11,7 @@ function Nav() {
         <div className="hidden md:flex items-center gap-8">
           <a href="#features" className="text-muted hover:text-dark text-sm font-medium transition-colors">Features</a>
           <a href="#pricing" className="text-muted hover:text-dark text-sm font-medium transition-colors">Pricing</a>
-          <a href="#contact" className="text-muted hover:text-dark text-sm font-medium transition-colors">Contact</a>
+          <a href="/contact" className="text-muted hover:text-dark text-sm font-medium transition-colors">Contact</a>
           <a
             href="/signup"
             className="bg-primary hover:bg-[#c0392b] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
@@ -236,10 +236,10 @@ function Pricing() {
               Get Started
             </a>
             <p className="text-muted text-xs mt-4">
-              Questions? Email{' '}
-              <a href="mailto:hello@highstreetcollective.co.uk" className="text-primary underline">
-                hello@highstreetcollective.co.uk
-              </a>
+              Questions? Call{' '}
+              <a href="tel:07787620982" className="text-primary underline">07787 620982</a>
+              {' '}or email{' '}
+              <a href="mailto:alf.evans@icloud.com" className="text-primary underline">alf.evans@icloud.com</a>
             </p>
           </div>
         </div>
@@ -251,21 +251,105 @@ function Pricing() {
 // ── FOOTER ────────────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer id="contact" className="bg-dark py-12 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <p className="font-serif text-xl font-bold text-cream">High Street Collective</p>
-          <p className="text-[#c4a48c] text-sm mt-1">Built for independent barbershops</p>
+    <footer className="bg-dark py-14 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between gap-10 mb-10">
+          <div>
+            <p className="font-serif text-2xl font-bold text-cream mb-1">High Street Collective.</p>
+            <p className="text-[#c4a48c] text-sm">Built for independent barbershops</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-8 text-sm text-[#c4a48c]">
+            <div>
+              <p className="text-cream font-semibold mb-2">Contact</p>
+              <a href="tel:07787620982" className="block hover:text-cream transition-colors mb-1">07787 620982</a>
+              <a href="mailto:alf.evans@icloud.com" className="block hover:text-cream transition-colors">alf.evans@icloud.com</a>
+            </div>
+            <div>
+              <p className="text-cream font-semibold mb-2">Legal</p>
+              <a href="/privacy" className="block hover:text-cream transition-colors mb-1">Privacy Policy</a>
+              <a href="/terms" className="block hover:text-cream transition-colors">Terms of Service</a>
+            </div>
+            <div>
+              <p className="text-cream font-semibold mb-2">Company</p>
+              <a href="/contact" className="block hover:text-cream transition-colors mb-1">Contact us</a>
+              <a href="/signup" className="block hover:text-cream transition-colors">Get Started</a>
+            </div>
+          </div>
         </div>
-        <div className="flex gap-8 text-sm text-[#c4a48c]">
-          <a href="#" className="hover:text-cream transition-colors">Privacy</a>
-          <a href="#" className="hover:text-cream transition-colors">Terms</a>
-          <a href="mailto:hello@highstreetcollective.co.uk" className="hover:text-cream transition-colors">
-            Contact
-          </a>
+        <div className="border-t border-[#3d2518] pt-6 text-[#c4a48c] text-xs">
+          © {new Date().getFullYear()} High Street Collective. All rights reserved.
         </div>
       </div>
     </footer>
+  )
+}
+
+// ── DEMO SECTION ─────────────────────────────────────────────────────
+function Demo() {
+  return (
+    <section className="bg-cream py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-dark mb-4">
+            See it in action
+          </h2>
+          <p className="text-muted text-lg max-w-xl mx-auto">
+            Here&#39;s what your customers would see when they visit your booking page.
+          </p>
+        </div>
+
+        {/* Mock browser window */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-[#2C1810] rounded-t-2xl px-4 py-3 flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full bg-[#D94F3D]" />
+            <span className="w-3 h-3 rounded-full bg-[#FFD166]" />
+            <span className="w-3 h-3 rounded-full bg-[#8DB87A]" />
+            <div className="flex-1 bg-[#3d2518] rounded-lg px-3 py-1 ml-2">
+              <p className="text-[#c4a48c] text-xs font-mono">trimbook.co.uk/your-shop-name</p>
+            </div>
+          </div>
+          <div className="bg-[#0f0f0f] rounded-b-2xl overflow-hidden shadow-warm-lg border border-[#2C1810]">
+            {/* Fake booking page inside */}
+            <div className="px-6 py-5 border-b border-[#2a2a2a] flex items-center justify-between">
+              <p className="text-white font-semibold text-sm">← Your Shop Name</p>
+              <p className="text-gray-400 text-xs">Book an Appointment</p>
+            </div>
+            <div className="p-6">
+              <p className="text-white font-bold text-lg mb-1">Pick a Service</p>
+              <p className="text-gray-400 text-sm mb-4">Choose what you&#39;d like today</p>
+              <div className="space-y-3">
+                {[
+                  { name: 'Haircut', price: '£18', time: '30 min' },
+                  { name: 'Beard Trim', price: '£12', time: '20 min' },
+                  { name: 'Full Groom', price: '£25', time: '45 min' },
+                ].map(s => (
+                  <div key={s.name} className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-4 py-3 flex items-center justify-between">
+                    <div>
+                      <p className="text-white font-medium text-sm">{s.name}</p>
+                      <p className="text-gray-500 text-xs">{s.time}</p>
+                    </div>
+                    <p className="text-[#c9a84c] font-bold">{s.price}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-10">
+          <p className="text-muted mb-4">Want to see a live example? Give us a call.</p>
+          <a
+            href="tel:07787620982"
+            className="inline-flex items-center gap-2 bg-white border-2 border-[#e8d5c4] hover:border-primary text-dark font-semibold px-6 py-3 rounded-2xl transition-colors shadow-warm"
+          >
+            <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            07787 620982
+          </a>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -278,6 +362,7 @@ export default function Home() {
         <Hero />
         <HighStreetIllustration />
         <Features />
+        <Demo />
         <HowItWorks />
         <Pricing />
       </main>

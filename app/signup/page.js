@@ -190,7 +190,11 @@ function SignupForm() {
                   {loading ? 'Preparing checkout…' : 'Create Account & Continue to Payment'}
                 </button>
                 <p className="text-center text-muted text-xs mt-4 leading-relaxed">
-                  £49/month. Cancel any time. Secure payment via Stripe.
+                  £49/month · Cancel any time · Secure payment via Stripe
+                </p>
+                <p className="text-center text-muted text-xs mt-1">
+                  Questions? Call{' '}
+                  <a href="tel:07787620982" className="text-primary underline">07787 620982</a>
                 </p>
               </div>
             </form>
